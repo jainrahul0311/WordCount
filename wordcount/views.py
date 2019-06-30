@@ -8,4 +8,6 @@ def Gym(request):
     return HttpResponse('<h1>Lets Go To The Gym!!</h1>')
 
 def count(request):
-    return render(request,'count.html')
+    fulltext=request.GET['fulltext']
+    l=len(fulltext)
+    return render(request,'count.html',{'len':l})
