@@ -9,5 +9,6 @@ def Gym(request):
 
 def count(request):
     fulltext=request.GET['fulltext']
-    l=len(fulltext)
-    return render(request,'count.html',{'len':l})
+    words=fulltext.split()
+    l=len(words)
+    return render(request,'count.html',{'len':l,'text':fulltext})
