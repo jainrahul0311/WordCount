@@ -24,3 +24,6 @@ def count(request):
     sorted_d = sorted(dict.items(), key=operator.itemgetter(1) ,reverse=True)
 
     return render(request,'count.html',{'len':l,'text':fulltext,'dictonary':sorted_d})
+
+def aboutus(request):
+        return render(request,'about.html')
