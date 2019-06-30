@@ -1,3 +1,7 @@
 <h1>COUNT</h1>
 <h2>Text : {{text}}</h2>
 <p>No of words in TEXT is : {{len}}</p>
+<p>Occurence of words</p>
+{% for d,c in dictonary %}
+    <p> {{d}} : {{c}}</p>
+{% endfor %}

@@ -11,4 +11,13 @@ def count(request):
     fulltext=request.GET['fulltext']
     words=fulltext.split()
     l=len(words)
-    return render(request,'count.html',{'len':l,'text':fulltext})
+
+    #Find occurence of words
+    dict={}
+    for w in words:
+        if w not in dict:
+            dict[w]=1
+        else:
+            dict[w]+=1
+    
+    return render(request,'count.html',{'len':l,'text':fulltext,'dictonary':dict.items()})
