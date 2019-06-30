@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+import operator
 
 def home(request):
     return render(request,'home.html')
@@ -20,4 +21,6 @@ def count(request):
         else:
             dict[w]+=1
     
-    return render(request,'count.html',{'len':l,'text':fulltext,'dictonary':dict.items()})
+    sorted_d = sorted(dict.items(), key=operator.itemgetter(1) ,reverse=True)
+
+    return render(request,'count.html',{'len':l,'text':fulltext,'dictonary':sorted_d})
