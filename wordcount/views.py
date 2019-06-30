@@ -5,4 +5,7 @@ def home(request):
     return render(request,'home.html')
 
 def Gym(request):
-    return HttpResponse('<h1>Lets Go To The Gym!!')
+    return HttpResponse('<h1>Lets Go To The Gym!!</h1>')
+
+def count(request):
+    return render(request,'count.html')
