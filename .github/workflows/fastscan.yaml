@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Job ID
-        run: echo ${{ github.job }} ${{ github.run_id }}
+        run: echo ${{ github }} ${{ job }}
       
       - name: Checkout code
         uses: actions/checkout@v2
