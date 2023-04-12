@@ -9,6 +9,9 @@ jobs:
   run-fastscan:
     runs-on: ubuntu-latest
     steps:
+      - name: Print Job ID
+        run: echo "Job ID: ${{ github.job }}"
+      
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -21,6 +24,8 @@ jobs:
           git_folder=$(basename "$(git rev-parse --show-toplevel)") 
           # The git folder name is mapped to the project name
           docker run -v $(pwd):/fastScan/sourceCode castimaging/fast-scan-java-cli /fastScan/sourceCode -n $git_folder
-          
+      
+      - name: Print Job ID
+        run: echo "Job ID: ${{ github.job }}"
 
           
