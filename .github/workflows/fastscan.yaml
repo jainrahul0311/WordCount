@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Job ID
-        run: echo "Job ID: ${{ github.job }}"
+        run: echo ${{ github.job }}
       
       - name: Checkout code
         uses: actions/checkout@v2
@@ -26,6 +26,6 @@ jobs:
           docker run -v $(pwd):/fastScan/sourceCode castimaging/fast-scan-java-cli /fastScan/sourceCode -n $git_folder
       
       - name: Print Job ID
-        run: echo "Job ID: ${{ github.job }}"
+        run: echo ${{ github.job }}
 
           
